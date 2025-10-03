@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .rental-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="date"],
+        input[type="text"],
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 12px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rental-form">
+        <h2>Book Your Car</h2>
+        <form action="/submit-rental-request" method="post"> <!-- Replace with your server-side script -->
+
+            <div class="form-group">
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="date" id="pickup-date" name="pickup_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date" name="return_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pickup-location">Pickup Location:</label>
+                <input type="text" id="pickup-location" name="pickup_location" placeholder="Enter pickup city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="return-location">Return Location:</label>
+                <input type="text" id="return-location" name="return_location" placeholder="Enter return city">
+            </div>
+
+            <div class="form-group">
+                <label for="car-type">Car Type:</label>
+                <select id="car-type" name="car_type">
+                    <option value="">-- Select a Car Type --</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="van">Van</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+            </div>
+
+            <button type="submit">Search & Book</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
